@@ -1,5 +1,7 @@
 package com.example.myapplication1
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.widget.EditText
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
@@ -19,17 +21,30 @@ class MainActivity : AppCompatActivity() {
         }
         val inputField = findViewById<EditText>(R.id.inputField)
         val resultTextView = findViewById<TextView>(R.id.resultTextView)
-        val inputChar = inputField.text.toString().trim()
+        //val inputChar = inputField.text.toString().trim()
+        inputField.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                // Не нужно ничего делать перед изменением текста
+            }
 
-        if (inputChar.length != 1 || !inputChar[0].isLowerCase() || !inputChar[0].isLetter()) {
-            resultTextView.text = "Введенный символ не является строчной латинской буквой."
-            return
-        }
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                // Проверяем введенный символ при каждом изменении текста
+                val inputChar = s.toString().trim()
 
-        // Проверка на гласные
-        when (inputChar[0]) {
-            'a', 'e', 'i', 'o', 'u' -> resultTextView.text = "Это гласные буквы."
-            else -> resultTextView.text = "Возможно, это согласные буквы."
-        }
+                if (inputChar.length != 1 || !inputChar[0].isLowerCase() || !inputChar[0].isLetter()) {
+                    resultTextView.text = "Введенный символ не является строчной латинской буквой."
+                } else {
+                    // Проверка на гласные
+                    when (inputChar[0]) {
+                        'a', 'e', 'i', 'o', 'u' -> resultTextView.text = "Это гласные буквы."
+                        else -> resultTextView.text = "Возможно, это согласные буквы."
+                    }
+                }
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+                // Не нужно ничего делать после изменения текста
+            }
+        })
     }
-    }
+}

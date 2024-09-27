@@ -24,7 +24,7 @@
     <TextView
         android:id="@+id/resultTextView"
         android:layout_width="340dp"
-        android:layout_height="40dp"
+        android:layout_height="130dp"
         android:background="#858BC34A"
         android:paddingTop="16dp"
         android:textSize="18sp"
@@ -33,7 +33,7 @@
         app:layout_constraintHorizontal_bias="0.225"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.272" />
+        app:layout_constraintVertical_bias="0.311" />
 
     <TextView
         android:id="@+id/textView2"
