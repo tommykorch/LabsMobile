@@ -13,38 +13,81 @@
         android:layout_height="46dp"
         android:backgroundTint="#8BC34A"
         android:backgroundTintMode="screen"
+        android:fontFamily="sans-serif-medium"
         android:hint="Введите символ"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.228"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/resultTextViewTask1"
+        app:layout_constraintStart_toStartOf="@+id/resultTextViewTask1"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.189" />
+        app:layout_constraintVertical_bias="0.198" />
 
     <TextView
-        android:id="@+id/resultTextView"
-        android:layout_width="340dp"
-        android:layout_height="130dp"
+        android:id="@+id/resultTextViewTask2"
+        android:layout_width="344dp"
+        android:layout_height="64dp"
         android:background="#858BC34A"
-        android:paddingTop="16dp"
-        android:textSize="18sp"
+        android:fontFamily="sans-serif-medium"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.225"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.311" />
+        app:layout_constraintVertical_bias="0.607" />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="358dp"
-        android:layout_height="103dp"
-        android:text="Вариант 5. Ввести символ. Если символ не латинская строчная (маленькая) буква – вывести сообщение и закончить выполнение программы, иначе, если это буквы a, i, e, o, u – вывести сообщение: «Это гласные буквы», для других значений – «Возможно, это согласные буквы»."
+        android:layout_width="336dp"
+        android:layout_height="61dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Задание 2. Вариант 5. Дано натуральное число n. Вычислить: 1/1!+1/2!+1/3!+1/4!+...+1/n!, где n!=1*2*3*..*n."
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.32"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/inputField1"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="@+id/inputField1"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.025" />
+        app:layout_constraintVertical_bias="0.408" />
+
+    <EditText
+        android:id="@+id/inputField1"
+        android:layout_width="342dp"
+        android:layout_height="52dp"
+        android:backgroundTint="#8BC34A"
+        android:backgroundTintMode="screen"
+        android:fontFamily="sans-serif-medium"
+        android:hint="Введите натуральное число n"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/resultTextViewTask2"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/resultTextViewTask2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.505" />
+
+    <TextView
+        android:id="@+id/resultTextViewTask1"
+        android:layout_width="339dp"
+        android:layout_height="71dp"
+        android:background="#858BC34A"
+        android:fontFamily="sans-serif-medium"
+        android:paddingTop="16dp"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textView2"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.287" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="340dp"
+        android:layout_height="122dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Задание 1. Вариант 5. Ввести символ. Если символ не латинская строчная (маленькая) буква – вывести сообщение и закончить выполнение программы, иначе, если это буквы a, i, e, o, u – вывести сообщение: «Это гласные буквы», для других значений – «Возможно, это согласные буквы»."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/inputField"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/inputField"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.009" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
