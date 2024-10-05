@@ -73,7 +73,7 @@ class MainActivity : AppCompatActivity() {
     private fun calculateSum(n: Int): Double {
         var sum = 0.0
         var factorial = 1.0 // Начальное значение для 0!
-        var count=0
+
         for (i in 1..n) {
             factorial *= i // Вычисляем i!
             sum += 1 / factorial // Добавляем 1/i!
