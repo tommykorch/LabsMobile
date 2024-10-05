@@ -97,7 +97,6 @@ class MainActivity : AppCompatActivity() {
         val lowercaseCount = input.count { it in 'a'..'z' }
 
         return Pair(modifiedString, lowercaseCount)
-
     }
     private fun calculateSum(n: Int): Double {
         var sum = 0.0
