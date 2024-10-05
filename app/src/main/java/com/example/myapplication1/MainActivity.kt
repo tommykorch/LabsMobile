@@ -23,15 +23,17 @@ class MainActivity : AppCompatActivity() {
         val resultTextView = findViewById<TextView>(R.id.resultTextViewTask1)
         val inputField1 = findViewById<EditText>(R.id.inputField1)
         val resultTextView1= findViewById<TextView>(R.id.resultTextViewTask2)
+        val inputField2 = findViewById<EditText>(R.id.inputField2)
+        val resultTextView2= findViewById<TextView>(R.id.resultTextViewTask3)
 
         //val inputChar = inputField.text.toString().trim()
         inputField.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-                // Не нужно ничего делать перед изменением текста
+
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                // Проверяем введенный символ при каждом изменении текста
+                // проверяем символ
                 val inputChar = s.toString().trim()
 
                 if (inputChar.length != 1 || !inputChar[0].isLowerCase() || !inputChar[0].isLetter()) {
@@ -46,7 +48,6 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun afterTextChanged(s: Editable?) {
-                // Не нужно ничего делать после изменения текста
             }
         })
         // Обработка ввода натурального числа n
@@ -68,6 +69,34 @@ class MainActivity : AppCompatActivity() {
             }
             override fun afterTextChanged(s: Editable?) {}
         })
+        inputField2.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+
+                val inputString = s.toString()
+                val (modifiedString, lowercaseCount) = processString(inputString)
+
+                // Обновляем результат
+                resultTextView2.text = "Обработанная строка:\n$modifiedString\nКоличество маленьких латинских букв: $lowercaseCount"
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+
+            }
+        })
+    }
+
+    private fun processString(input: String): Pair<String, Int> {
+        // цифры на  пробелы
+        val modifiedString = input.replace(Regex("\\d"), " ")
+
+        // считаем латинские стрчоные буквы
+        val lowercaseCount = input.count { it in 'a'..'z' }
+
+        return Pair(modifiedString, lowercaseCount)
 
     }
     private fun calculateSum(n: Int): Double {
